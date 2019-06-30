@@ -33,7 +33,10 @@ public class IamportViewManager extends SimpleViewManager<IamportWebView> implem
   @Override
   public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
     /* 실시간 계좌이체 인증 후 후속처리 루틴 */
-    webViewClient.bankPayPostProcess(requestCode, resultCode, data);
+    try{
+        webViewClient.bankPayPostProcess(requestCode, resultCode, data);
+    }catch(Exception e){
+    }
   }
 
   @Override
